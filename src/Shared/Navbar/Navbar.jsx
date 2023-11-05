@@ -1,4 +1,7 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Navbar = () => {
@@ -20,6 +23,21 @@ const Navbar = () => {
     
     </>
 
+
+   const {user, logOut}= useContext(AuthContext)
+     
+   const handleSingOut = () => {
+    logOut()
+      .then(result => {
+        console.log(result)
+        Swal.fire('LogOut Successfully')
+      })
+
+      .catch()
+
+  }
+
+
     return (
         <div>
             <div className="navbar rounded-xl bg-slate-200">
@@ -40,7 +58,34 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-      <Link to="/login" >Login</Link>
+     
+        {
+           user ? (<div className="dropdown dropdown-end">
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full">
+                    <img src={user?.photoURL} />
+                  </div>
+                </label>
+                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-60">
+                  <li>
+                    <a className="justify-between">
+                      Profile
+                      <span> <img className=" w-7 h-7 rounded-full" src={user?.photoURL} alt="" /> </span>
+                    </a>
+                    <p className=" text-xl p-3 " > {user?.displayName} </p>
+                    <p className=" -ml-2  p-3 " > {user?.email} </p>
+                   
+                  </li>
+                  <button onClick={ handleSingOut} className=" btn btn-secondary mr-4 " > Sign Out </button>
+             
+                </ul>
+              </div>)
+               : (<Link to='/login' > <button className=" btn btn-secondary mr-4 " > Login </button> </Link>)
+                   
+            }
+
+
+
   </div>
 </div>
         </div>

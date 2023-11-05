@@ -1,13 +1,50 @@
 import { useContext } from "react";
 import { AiFillGoogleSquare, AiFillGithub } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Providers/AuthProvider";
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from "../Firebase/Firebase.config";
 
 const Login = () => {
       
     const {signIn} = useContext(AuthContext)
-     
+     const auth = getAuth(app)
+     const provider = new GoogleAuthProvider()
+     const providers= new GithubAuthProvider() 
+     const location = useLocation()
+     const navigate  = useNavigate()
+     // googleLogin
+  const handleGoogleSignIn = ()=>{
+       
+    signInWithPopup(auth, provider)
+
+    .then(result=>{
+      const user = result.user
+      console.log(user)
+      navigate(location?.state? location?. state : '/')
+    })
+
+    .catch(error=>{
+      console.error(error)
+    })
+   } 
+
+// github login
+const handleGitHubSignIn = ()=>{
+    signInWithPopup(auth,providers)
+    .then(result=>{
+      const user = result.user
+      console.log(user)
+      navigate(location?.state? location?. state : '/')
+    })
+    .catch(error=>{
+      console.error(error)
+    })
+   }
+
+
+
     // login
      const handleLogin = event =>{
           event.preventDefault()
@@ -64,9 +101,9 @@ const Login = () => {
       <div className=" text-center" >
         <h1> Or Sign In with </h1>
          <p className=" flex items-center justify-center gap-2 text-2xl mt-3 p-3" >
-        <button className=" flex items-center" > <AiFillGoogleSquare></AiFillGoogleSquare>Google</button>
+        <button onClick={handleGoogleSignIn} className=" flex items-center" > <AiFillGoogleSquare></AiFillGoogleSquare>Google</button>
           
-       <button className=" flex items-center" > <AiFillGithub></AiFillGithub> GitHup </button>
+       <button onClick={handleGitHubSignIn} className=" flex items-center" > <AiFillGithub></AiFillGithub> GitHup </button>
          </p>
       </div>
       <div>

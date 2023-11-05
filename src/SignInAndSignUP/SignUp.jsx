@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
 
 
 const SignUp = () => {
@@ -35,9 +36,9 @@ const SignUp = () => {
           const user = result.user;
           console.log(user);
           Swal.fire('Account Credited Successfully')
-        //   updateProfile(result.user,{
-        //     photoURL:photo
-        //   })
+          updateProfile(result.user,{
+            photoURL:photo
+          })
         })
         .catch(error =>{
           console.log(error)
