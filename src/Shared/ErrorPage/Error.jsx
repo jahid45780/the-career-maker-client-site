@@ -19,7 +19,7 @@ export default function ErrorPage() {
 </div>
 
       <p>
-        <i>{error.statusText || error.message}</i>
+        <i>{error.statusText || error.message}</i> 
       </p>
     </div>
   );

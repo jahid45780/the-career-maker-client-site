@@ -1,7 +1,34 @@
+import { useContext } from "react";
 import { AiFillGoogleSquare, AiFillGithub } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const Login = () => {
+      
+    const {signIn} = useContext(AuthContext)
+     
+    // login
+     const handleLogin = event =>{
+          event.preventDefault()
+          const form = event.target;
+          const email = form.email.value;
+          const password = form.password.value;
+          
+         
+          signIn(email,password)
+          .then(result =>{
+            const loggedInUser = result.user
+            console.log(loggedInUser);
+            Swal.fire('Login Successfully')
+          })
+          .catch(error=>{
+            console.log(error);
+            Swal.fire('Incorrect password Try again')
+          })
+
+     }
+
     return (
         <div>
                   <div className="hero min-h-screen bg-slate-100 rounded-lg ">
@@ -12,7 +39,7 @@ const Login = () => {
       
     </div>
     <div className="card flex-shrink-0 w-full  max-w-sm shadow-2xl bg-base-100">
-      <form className="card-body  ">
+      <form onSubmit={handleLogin} className="card-body  ">
       <h1 className="text-3xl text-center font-bold">Login </h1>
         <div className="form-control">
           <label className="label">

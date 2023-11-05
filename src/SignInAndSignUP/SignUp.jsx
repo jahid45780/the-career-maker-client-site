@@ -1,7 +1,54 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const SignUp = () => {
+
+    const {createUser} = useContext(AuthContext)
+
+    const handleLogin = event =>{
+        event.preventDefault()
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const photo = form.photo.value;
+        const password = form.password.value
+        
+        console.log(name, email, photo, password);
+        form.reset('')
+
+        if(password.length < 6  ){
+            Swal.fire('Password must be more than 6 digits')
+            return;
+        }
+  
+        else if (!/[A-Z]/.test(password)){
+          Swal.fire('your password should have at least on  uppercase character')
+          return;
+     } 
+
+         
+        createUser(email,password,name,photo)
+        .then(result =>{
+          const user = result.user;
+          console.log(user);
+          Swal.fire('Account Credited Successfully')
+        //   updateProfile(result.user,{
+        //     photoURL:photo
+        //   })
+        })
+        .catch(error =>{
+          console.log(error)
+          Swal.fire(' Already have this account ') 
+        })
+
+
+
+   }
+      
+
     return (
         <div>
              
@@ -13,7 +60,7 @@ const SignUp = () => {
       
     </div>
     <div className="card flex-shrink-0 w-full  max-w-sm shadow-2xl bg-base-100">
-      <form className="card-body  ">
+      <form onSubmit={handleLogin} className="card-body  ">
       <h1 className="text-3xl text-center font-bold"> Sign Up </h1>
 
       <div className="form-control">
