@@ -1,9 +1,11 @@
+import Salider from "../../Salider/Salider";
 
 
 const Home = () => {
     return (
         <div>
-            <h2>its home</h2>
+            <Salider></Salider>
+            
         </div>
     );
 };
