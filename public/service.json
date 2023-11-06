@@ -1,0 +1,44 @@
+[
+    {
+        "service_id": "01",
+        "service_Image": "https://i.ibb.co/7QNd86M/best-friends-shopping.jpg",
+        "service_name": "Personal Shopping Assistance",
+        "service_description":"Maureen Cartwright is a personal shopper in Paris for Kyra Gellman, a supermodel. Maureen is waiting for her twin brother, Lewis, who recently died of a genetic heart condition, to fulfill their pact to send a signal from the afterlife. She stays overnight at Lewis's house in hopes of receiving a sign and briefly encounters a spiritual presence. Lewis's girlfriend, Lara, goes with Maureen to meet a couple acquainted with Lewis who are interested in buying the house. The wife mentions the artist Hilma af Klint, whose paintings were inspired by messages from the spirit world. Later, Maureen video chats with her boyfriend, Gary, a contractor in Muscat, Oman, who encourages her to visit him, which she turns down",
+        "provider_img": "https://i.ibb.co/v4mPG4k/images.jpg",
+        "provider_name":"Mr Tom",
+        "price": "10.00"
+       
+     
+    },
+    {
+        "service_id": "02",
+        "service_Image": "https://i.ibb.co/jHw2L7x/employee-packing-client-products.jpg",
+        "service_name": "Returns and Exchanges",
+        "service_description":"Most retailers and e-commerce websites have specific return and exchange policies in place. These policies outline the conditions under which returns and exchanges are accepted, including the timeframe for initiating them, requirements for returning the item in its original condition and packaging, and the methods of refund or exchange Most retailers have a specific timeframe within which returns and exchanges are allowed. This period can vary from a few days to several weeks Items that show signs of wear and tear may not be accepted for return or exchange.",
+        "provider_img": "https://i.ibb.co/s6V3g9c/medium-shot-smiley-business-man.jpg",
+        "provider_name":"MD Jason",
+        "price": "20.00"
+       
+    },
+    {
+        "service_id": "03",
+        "service_Image": "https://i.ibb.co/J2XhqQ7/full-shot-woman-online-fashion-shopping.jpg",
+        "service_name": "Online Shopping",
+        "service_description":"There are numerous online retailers and marketplaces where consumers can shop for a wide range of products, from clothing and electronics to groceries and more. Some popular online marketplaces include Amazon, eBay, and Walmart, while many traditional brick-and-mortar stores also have online shopping platforms.  Online shopping involves the use of personal and financial information, so it's essential to shop from reputable and secure websites. Look for secure checkout processes, such as those with SSL (Secure Sockets Layer) encryption, and use strong, unique passwords for online accounts.",
+        "provider_img": "https://i.ibb.co/HNxhgx3/teenager-girl-styding-home.jpg",
+        "provider_name":"Miss Mari",
+        "price": "30.00"
+   
+    },
+    {
+        "service_id": "04",
+        "service_Image": "https://i.ibb.co/P1wL344/happy-courier-holding-clipboard-woman-signing-positive-deliveryman-red-cap-shirt-carrying-thermo-bag.jpg",
+        "service_name": "Home Delivery",
+        "service_description":"Begin by developing a solid business plan that outlines your clothing niche, target market, pricing strategy, marketing approach, and logistics for home delivery. This plan will serve as your roadmap for success.  Source clothing inventory from various suppliers, which could include wholesalers, manufacturers, or your own designs. Establish relationships with reliable suppliers to ensure a steady supply of clothing",
+        "provider_img": "https://i.ibb.co/fDTWp0T/received-9602592169766792.jpg",
+        "provider_name":"Md Jahid",
+        "price": "40.00"
+       
+    }
+]
+    

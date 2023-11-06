@@ -118,4 +118,3 @@ How is our service? </h1>
 
 export default ExtraSection;
 
-// style={{ height: '500px', width: '1280px', marginTop:'15px' }}
