@@ -22,7 +22,7 @@ const AddService = () => {
         console.log(newProduct)
 
         //  sent data to the server
-        fetch('http://localhost:5000/product',{
+        fetch('https://the-career-maker-server-site.vercel.app/product',{
        
             method:'POST',
             headers: {

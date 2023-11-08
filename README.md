@@ -1,5 +1,5 @@
 
-  <img src="https://i.ibb.co/KKgMX3G/female-friends-out-shopping-together.jpg" alt="" />
+ <img src="https://i.ibb.co/KKgMX3G/female-friends-out-shopping-together.jpg" alt="" />
 <h1> detail 1 </h1>
 <p> Typically, an online personal shopping assistant's job revolves around providing customers with essential shopping advice. First, they define the needs and style of a customer, and then they recommend products that fit within their style. However, since all this happens remotely, personal shopping assistants have to utilize online resources to do the job. Some of the most common resources that they use include </p>
 <h1> detail 2 </h1>

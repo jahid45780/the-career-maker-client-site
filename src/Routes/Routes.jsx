@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         {
           path: '/checkout/:id',
           element: <PrivateRoute><CartDetail></CartDetail></PrivateRoute> ,
-          loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+          loader: ({params})=> fetch(`https://the-career-maker-server-site.vercel.app/services/${params.id}`)
         },
         {
           path:'/services',
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
         {
           path:'/cart/:id',
           element:<PrivateRoute><ServicesDetail></ServicesDetail></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/allServices/${params.id}`)
+          loader: ({params}) => fetch(`https://the-career-maker-server-site.vercel.app/allServices/${params.id}`)
           
         },
         {

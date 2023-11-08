@@ -30,7 +30,7 @@ const ServicesDetail = () => {
       }
       console.log(purchase);
 
-      fetch('http://localhost:5000/schedules',{
+      fetch('https://the-career-maker-server-site.vercel.app/schedules',{
            method:'POST',
            headers:{
               'content-type':'application/json'

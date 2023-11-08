@@ -10,7 +10,7 @@ const Schedules = () => {
 
 
 
-    const url = `http://localhost:5000/schedules?email: ${user?.email}`
+    const url = `https://the-career-maker-server-site.vercel.app/schedules?email: ${user?.email}`
     useEffect(()=>{
         fetch(url)
         .then(res => res.json())
@@ -22,7 +22,7 @@ const Schedules = () => {
         const proceed =  Swal.fire("Are you delete it!!");
 
         if(proceed){
-            fetch(`http://localhost:5000/schedules/${id}`,{
+            fetch(`https://the-career-maker-server-site.vercel.app/schedules/${id}`,{
                method:'DELETE'
 
             })
@@ -39,7 +39,7 @@ const Schedules = () => {
      }
 
      const handleConfirm =  id =>{
-        fetch(`http://localhost:5000/schedules/${id}`,{
+        fetch(`https://the-career-maker-server-site.vercel.app/schedules/${id}`,{
             method: 'PATCH',
             headers:{
                 'content-type':'application/json'
