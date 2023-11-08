@@ -14,7 +14,7 @@ const Navbar = () => {
   <summary className=" btn"> Dashboard </summary>
   <ul className="p-2  bg-slate-200 rounded-box w-52">
     <li> <Link>My-services</Link> </li>
-    <li> <Link>Add-services</Link> </li>
+    <li> <Link to='/addService' >Add-services</Link> </li>
     <li> <Link to='/schedules' >My-schedules</Link> </li>
      
   </ul>

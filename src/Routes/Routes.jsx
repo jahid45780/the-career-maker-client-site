@@ -9,6 +9,7 @@ import Service from "../Pages/Service/Service";
 import ServicesDetail from "../Pages/Service/ServicesDetail";
 import Schedules from "../Componets/Schedules/Schedules";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import AddService from "../Componets/AddService/AddService";
 
 
 const router = createBrowserRouter([
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
         {
           path:'schedules',
           element: <PrivateRoute> <Schedules></Schedules> </PrivateRoute>
+        },
+        {
+          path:'addService',
+          element:<AddService></AddService>
         }
        
       ]
