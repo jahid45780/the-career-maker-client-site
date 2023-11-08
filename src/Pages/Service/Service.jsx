@@ -39,7 +39,7 @@ const Service = () => {
                   allService.map(service => <AllServiceCart key={service._id} service={service} ></AllServiceCart> )
                  }
                 </div>   
-        
+       
         </div>
     );
 };

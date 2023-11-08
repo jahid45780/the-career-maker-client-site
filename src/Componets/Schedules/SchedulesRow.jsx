@@ -1,28 +1,10 @@
 import { AiFillDelete } from "react-icons/ai";
-import Swal from "sweetalert2";
-
-const SchedulesRow = ({schedules}) => {
-       const { _id, service_name, service_Image, email, date, price}= schedules;
-
-       const handleDelete = id =>{
-          const proceed = confirm('Are you you want  to delete')
-
-          if(proceed){
-              fetch(`http://localhost:5000/schedules/${id}`,{
-                 method:'DELETE'
-
-              })
-              .then(res => res.json())
-              .then(data => {
-                 console.log(data)
-                 if(data. deletedCount > 0){
-                    Swal.fire("SweetAlert2 is working!");
-                 }
-              })
-          }
-       }
 
 
+const SchedulesRow = ({schedules, handleDelete, handleConfirm}) => {
+       const { _id, service_name, service_Image, email, date, price, status}= schedules;
+
+         
     return (
         <tr>
         <th>
@@ -50,7 +32,14 @@ const SchedulesRow = ({schedules}) => {
         <td> {date} </td>
         <td> {price} </td>
         <th>
-          <button className="btn btn-ghost btn-xs">details</button>
+        
+                    
+        {  
+                  status === 'confirm' ?  <span className=" font-bold text-primary" > confirmed  </span> :  
+                    <button onClick={()=> handleConfirm (_id)} className="btn btn-ghost btn-xs "> Pending </button>
+                 }
+                
+                   
         </th>
       </tr>
     );

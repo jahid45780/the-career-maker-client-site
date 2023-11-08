@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import SchedulesRow from "./SchedulesRow";
+import Swal from "sweetalert2";
 
 
 const Schedules = () => {
@@ -14,7 +15,54 @@ const Schedules = () => {
         fetch(url)
         .then(res => res.json())
         .then(data => setSchedules(data))
-    },[url])
+    },[url]);
+
+
+    const handleDelete = id =>{
+        const proceed =  Swal.fire("Are you delete it!!");
+
+        if(proceed){
+            fetch(`http://localhost:5000/schedules/${id}`,{
+               method:'DELETE'
+
+            })
+            .then(res => res.json())
+            .then(data => {
+               console.log(data)
+               if(data. deletedCount > 0){
+                  Swal.fire("Delete successfully");
+                  const remaining = schedules.filter(schedule => schedule._id !== id);
+                  setSchedules(remaining)
+               }
+            })
+        }
+     }
+
+     const handleConfirm =  id =>{
+        fetch(`http://localhost:5000/schedules/${id}`,{
+            method: 'PATCH',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify({status: 'confirm'})
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.modifiedCount > 0){
+                //  update state
+                const remaining = schedules.filter(booking => booking._id!== id )
+                const updated = schedules.find(booking => booking._id === id)
+                updated.status = 'confirm'
+                const newBookings = [updated, ...remaining];
+                setSchedules(newBookings)
+
+            }
+        })
+       
+     } 
+
+
     return (
         <div>
          <h1 className=" text-4xl text-center font-bold mt-3" > My Schedules List {schedules.length} </h1>
@@ -43,6 +91,8 @@ const Schedules = () => {
       {
         schedules.map(schedule => <SchedulesRow
           key={schedule._id} schedules={schedule}
+          handleDelete={handleDelete}
+          handleConfirm ={handleConfirm}
         ></SchedulesRow>)
       }
      
