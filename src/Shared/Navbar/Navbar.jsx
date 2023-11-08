@@ -15,7 +15,7 @@ const Navbar = () => {
   <ul className="p-2  bg-slate-200 rounded-box w-52">
     <li> <Link>My-services</Link> </li>
     <li> <Link>Add-services</Link> </li>
-    <li> <Link>My-schedules</Link> </li>
+    <li> <Link to='/schedules' >My-schedules</Link> </li>
      
   </ul>
 </details>

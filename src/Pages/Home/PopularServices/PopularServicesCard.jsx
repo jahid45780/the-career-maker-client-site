@@ -9,7 +9,7 @@ const PopularServicesCard = ({service}) => {
   <div className="card-body text-center">
     <h2 className=" text-2xl font-semibold" > <span className=" font-bold" > Service:</span> {service_name} </h2>
     <p className=" text-4xl font-bold" > $ {price} </p>
-     <Link to={`/checkout/${_id}`} >
+     <Link to={`/checkout/${_id}`}>
      <button className=" btn btn-outline btn-warning" > Detail Service </button>
      </Link>
   </div>

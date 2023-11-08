@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import PopularServicesCard from "./PopularServicesCard";
+import { Link } from "react-router-dom";
 
 
 const PopularServices = () => {
@@ -32,7 +33,7 @@ const PopularServices = () => {
                }
 
             </div>
-
+                        <p className=" text-center p-2" ><Link to='/services' > <button className=" btn btn-outline btn-info p-4 " > Show All Services </button> </Link> </p>
 
         </div>
     );
